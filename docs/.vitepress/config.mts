@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   lang: 'en-US',
   title: 'mini MAKERSPACE Docs',
-  description: 'Practical notes for 3D printing, electronics, and rapid prototyping.',
+  description: 'Product manuals and documentation from mini MAKERSPACE.',
   cleanUrls: true,
   lastUpdated: true,
   appearance: false,
@@ -29,7 +29,7 @@ export default defineConfig({
       'meta',
       {
         property: 'og:description',
-        content: 'Practical notes for 3D printing, electronics, and rapid prototyping.'
+        content: 'Product manuals and documentation from mini MAKERSPACE.'
       }
     ]
   ],
@@ -37,35 +37,30 @@ export default defineConfig({
     logo: '/mini-logo.svg',
     siteTitle: false,
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Start Here', link: '/guide/getting-started' },
+      { text: 'Introduction', link: '/' },
       {
-        text: 'Build Guides',
+        text: 'Products',
         items: [
-          { text: '3D Printing', link: '/guide/3d-printing' },
-          { text: 'Electronics', link: '/guide/electronics' }
+          { text: 'mini MAKERSPACE XS 1', link: '/products/mini-makerspace-xs-1' }
         ]
       },
       { text: 'Main Site ↗', link: 'https://minimakerspace.id' }
     ],
-    sidebar: {
-      '/guide/': [
-        {
-          text: 'Start Here',
-          items: [
-            { text: 'Welcome', link: '/guide/getting-started' },
-            { text: 'Contributing', link: '/guide/contributing' }
-          ]
-        },
-        {
-          text: 'Build Guides',
-          items: [
-            { text: '3D Printing', link: '/guide/3d-printing' },
-            { text: 'Electronics', link: '/guide/electronics' }
-          ]
-        }
-      ]
-    },
+    sidebar: [
+      {
+        text: 'Introduction',
+        items: [
+          { text: 'Introduction', link: '/' },
+          { text: 'Contributing', link: '/guide/contributing' }
+        ]
+      },
+      {
+        text: 'Products',
+        items: [
+          { text: 'mini MAKERSPACE XS 1', link: '/products/mini-makerspace-xs-1' }
+        ]
+      }
+    ],
     search: {
       provider: 'local'
     },

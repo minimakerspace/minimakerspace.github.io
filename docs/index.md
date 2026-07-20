@@ -1,7 +1,8 @@
 ---
-layout: home
-title: Documentation coming soon
-description: Practical notes for 3D printing, electronics, and rapid prototyping.
+title: Introduction
+description: Welcome to the mini MAKERSPACE documentation workbench.
 ---
 
-<HomeLanding />
+# Welcome to the workbench
+
+Coming soon.
