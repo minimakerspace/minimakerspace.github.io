@@ -1,0 +1,566 @@
+@import 'vitepress/dist/client/theme-default/styles/vars.css';
+
+:root {
+  --maker-red: #7e1417;
+  --maker-red-deep: #5f0f12;
+  --maker-red-soft: rgba(126, 20, 23, 0.1);
+  --maker-ink: #1a1a1a;
+  --maker-paper: #ffffff;
+  --maker-warm: #f9f4f4;
+  --maker-line: #ece4e4;
+  --vp-c-brand-1: var(--maker-red);
+  --vp-c-brand-2: var(--maker-red-deep);
+  --vp-c-brand-3: #a52b2f;
+  --vp-c-brand-soft: var(--maker-red-soft);
+  --vp-c-bg: var(--maker-paper);
+  --vp-c-bg-soft: var(--maker-warm);
+  --vp-c-divider: var(--maker-line);
+  --vp-c-text-1: var(--maker-ink);
+  --vp-font-family-base: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --vp-nav-height: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--vp-font-family-base);
+}
+
+.VPNav {
+  border-bottom: 1px solid rgba(126, 20, 23, 0.08);
+}
+
+.VPNavBar {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+}
+
+.VPNavBarTitle .logo {
+  width: 106px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.VPNavBarMenuLink,
+.VPNavBarMenuGroup .text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.VPButton,
+.VPDoc a,
+.VPNavBarMenuLink {
+  transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+}
+
+.VPContent.is-home {
+  padding: 0;
+}
+
+.VPContent.is-home .VPHome {
+  padding-bottom: 0;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  font-family: 'Krona One', var(--vp-font-family-base);
+  letter-spacing: -0.035em;
+}
+
+.vp-doc h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.vp-doc h2 {
+  border-top: 0;
+}
+
+.vp-doc :not(pre) > code {
+  color: var(--maker-red);
+}
+
+.maker-home {
+  overflow: hidden;
+  color: var(--maker-ink);
+}
+
+.maker-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+  gap: clamp(36px, 6vw, 100px);
+  min-height: calc(100vh - var(--vp-nav-height));
+  padding: clamp(70px, 10vw, 128px) max(28px, calc((100vw - 1180px) / 2));
+  align-items: center;
+  background:
+    linear-gradient(rgba(126, 20, 23, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(126, 20, 23, 0.055) 1px, transparent 1px),
+    radial-gradient(circle at 75% 40%, rgba(126, 20, 23, 0.1), transparent 34%),
+    var(--maker-paper);
+  background-size: 48px 48px, 48px 48px, auto, auto;
+}
+
+.maker-hero::before,
+.maker-hero::after {
+  position: absolute;
+  content: '';
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(126, 20, 23, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.maker-hero::before {
+  top: 12%;
+  left: -150px;
+}
+
+.maker-hero::after {
+  right: -180px;
+  bottom: -90px;
+  width: 360px;
+  height: 360px;
+}
+
+.maker-hero__circuit {
+  position: absolute;
+  top: 16%;
+  left: 0;
+  width: 22%;
+  height: 58%;
+  border: 2px dashed rgba(126, 20, 23, 0.3);
+  border-left: 0;
+  border-radius: 0 56px 56px 0;
+  pointer-events: none;
+}
+
+.maker-hero__content,
+.maker-status {
+  position: relative;
+  z-index: 1;
+}
+
+.maker-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 26px;
+  color: var(--maker-red);
+  font-family: var(--vp-font-family-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.maker-kicker > span {
+  display: inline-block;
+  width: 34px;
+  height: 2px;
+  background: var(--maker-red);
+}
+
+.maker-hero__logo {
+  width: min(300px, 58vw);
+  height: auto;
+  margin-bottom: 28px;
+}
+
+.maker-hero h1,
+.maker-focus h2 {
+  margin: 0;
+  font-family: 'Krona One', var(--vp-font-family-base);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1.12;
+}
+
+.maker-hero h1 {
+  max-width: 780px;
+  font-size: clamp(42px, 5.5vw, 76px);
+}
+
+.maker-hero h1 em,
+.maker-focus h2 em {
+  color: var(--maker-red);
+  font-style: normal;
+}
+
+.maker-intro {
+  max-width: 680px;
+  margin: 28px 0 0;
+  color: #555050;
+  font-size: clamp(16px, 1.5vw, 19px);
+  line-height: 1.75;
+}
+
+.maker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.maker-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid var(--maker-red);
+  border-radius: 999px;
+  color: var(--maker-red);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.maker-button:hover {
+  color: var(--maker-red);
+  transform: translateY(-2px);
+  background: var(--maker-warm);
+}
+
+.maker-button--solid,
+.maker-button--solid:hover {
+  color: #fff;
+  background: var(--maker-red);
+}
+
+.maker-status {
+  align-self: end;
+  margin-bottom: 6vh;
+  padding: 1px;
+  border: 1px solid rgba(126, 20, 23, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 28px 70px rgba(65, 17, 19, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.maker-status__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--maker-line);
+  font-family: var(--vp-font-family-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.maker-status__live {
+  color: var(--maker-red);
+}
+
+.maker-status__live i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--maker-red);
+  box-shadow: 0 0 0 5px var(--maker-red-soft);
+}
+
+.maker-status ol {
+  margin: 0;
+  padding: 10px 20px;
+  list-style: none;
+}
+
+.maker-status li {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--maker-line);
+  opacity: 0.55;
+}
+
+.maker-status li.is-done,
+.maker-status li.is-active {
+  opacity: 1;
+}
+
+.maker-status li > span,
+.maker-status li > b {
+  font-family: var(--vp-font-family-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.maker-status li > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid var(--maker-line);
+  border-radius: 50%;
+}
+
+.maker-status li.is-done > span {
+  color: #fff;
+  border-color: var(--maker-red);
+  background: var(--maker-red);
+}
+
+.maker-status li > b {
+  color: var(--maker-red);
+}
+
+.maker-status strong,
+.maker-status small {
+  display: block;
+}
+
+.maker-status strong {
+  font-size: 13px;
+}
+
+.maker-status small {
+  margin-top: 2px;
+  color: #777070;
+  font-size: 11px;
+}
+
+.maker-status > p {
+  margin: 18px 20px 4px;
+  color: #777070;
+  font-size: 11px;
+}
+
+.maker-status > a {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px 18px;
+  color: var(--maker-red);
+  font-family: var(--vp-font-family-mono);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.maker-ticker {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 28px;
+  min-height: 48px;
+  padding: 0 32px;
+  overflow: hidden;
+  color: #fff;
+  background: var(--maker-ink);
+  font-family: var(--vp-font-family-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  white-space: nowrap;
+}
+
+.maker-ticker i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--maker-red);
+}
+
+.maker-focus {
+  padding: clamp(80px, 10vw, 140px) max(28px, calc((100vw - 1180px) / 2));
+  background: var(--maker-warm);
+}
+
+.maker-focus header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 54px;
+}
+
+.maker-focus .maker-kicker {
+  flex: 0 0 auto;
+  margin: 0 0 8px;
+}
+
+.maker-focus h2 {
+  max-width: 760px;
+  font-size: clamp(30px, 4vw, 52px);
+}
+
+.maker-focus__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.maker-card {
+  position: relative;
+  min-height: 330px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid var(--maker-line);
+  border-radius: 22px;
+  color: var(--maker-ink);
+  background: var(--maker-paper);
+}
+
+.maker-card:hover {
+  color: var(--maker-ink);
+  border-color: rgba(126, 20, 23, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(65, 17, 19, 0.08);
+}
+
+.maker-card > span {
+  font-family: var(--vp-font-family-mono);
+  color: var(--maker-red);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.maker-card__mark {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  margin: 40px 0 28px;
+  border: 1px solid var(--maker-line);
+  border-radius: 50%;
+}
+
+.maker-card__mark::before,
+.maker-card__mark::after,
+.maker-card__mark i {
+  position: absolute;
+  content: '';
+  background: var(--maker-red);
+}
+
+.maker-card__mark::before {
+  top: 37px;
+  left: 14px;
+  width: 46px;
+  height: 2px;
+}
+
+.maker-card__mark::after {
+  top: 14px;
+  left: 37px;
+  width: 2px;
+  height: 46px;
+}
+
+.maker-card__mark i {
+  top: 33px;
+  left: 33px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--maker-red);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.maker-card h3 {
+  margin: 0;
+  font-family: 'Krona One', var(--vp-font-family-base);
+  font-size: 18px;
+}
+
+.maker-card p {
+  min-height: 66px;
+  margin: 14px 0 28px;
+  color: #686161;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.maker-card b {
+  color: var(--maker-red);
+  font-size: 12px;
+}
+
+@media (max-width: 960px) {
+  .maker-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .maker-hero__circuit {
+    width: 34%;
+  }
+
+  .maker-status {
+    width: min(100%, 520px);
+    margin: 0;
+  }
+
+  .maker-focus header {
+    display: block;
+  }
+
+  .maker-focus .maker-kicker {
+    margin-bottom: 20px;
+  }
+
+  .maker-focus__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maker-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --vp-nav-height: 64px;
+  }
+
+  .maker-hero {
+    padding-top: 62px;
+  }
+
+  .maker-hero h1 {
+    font-size: clamp(34px, 11vw, 48px);
+  }
+
+  .maker-actions,
+  .maker-button {
+    width: 100%;
+  }
+
+  .maker-button {
+    justify-content: space-between;
+  }
+
+  .maker-status__head,
+  .maker-status li {
+    gap: 8px;
+  }
+
+  .maker-ticker {
+    justify-content: flex-start;
+  }
+
+  .maker-focus h2 {
+    font-size: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
