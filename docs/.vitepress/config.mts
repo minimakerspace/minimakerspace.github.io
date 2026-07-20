@@ -48,7 +48,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Introduction',
+        text: 'Menu',
         items: [
           { text: 'Introduction', link: '/' },
           { text: 'Contributing', link: '/guide/contributing' }
